@@ -2,10 +2,10 @@
 class Calculator:
 
     def add(self, a, b):
-        return a - b # chyba 1
+        return a + b # chyba 1
 
     def subtract(self, a, b):
-        return a + b # chyba 2
+        return a - b # chyba 2
 
     def multiply(self, a, b):
         return a * b
