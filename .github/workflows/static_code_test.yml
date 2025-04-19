@@ -18,12 +18,12 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-
+ 
       - name: Run Flake8 (PEP 8 check)
-        run: flake8 calc.py --max-line-length=88
+        run: flake8 . --max-line-length=88
 
       - name: Run Pylint (Linting)
-        run: pylint calc.py || true # Pylint vrací nenulový kód při chybách, proto `|| true`
+        run: pylint $(find . -name "*.py") || true
 
       - name: Check Formatting with Black
-        run: black --check calc.py
+        run: black --check .
