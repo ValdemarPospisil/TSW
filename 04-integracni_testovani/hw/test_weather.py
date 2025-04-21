@@ -19,11 +19,7 @@ def test_fetch_all_weather_with_spy():
 
 def test_fetch_weather_monkeypatch(monkeypatch):
     def mock_fetch_weather(city):
-        return {
-            "main": {
-                "temp": 20
-            }
-        }
+        return {"main": {"temp": 20}}
 
     monkeypatch.setattr(weather, "fetch_weather", mock_fetch_weather)
 

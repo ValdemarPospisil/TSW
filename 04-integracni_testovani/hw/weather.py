@@ -3,6 +3,7 @@ import toml
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+
 # Načtení proměnných z .env souboru
 load_dotenv()
 API_KEY = os.getenv("API_KEY")

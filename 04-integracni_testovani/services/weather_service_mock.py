@@ -1,7 +1,7 @@
 from datetime import datetime
 
-class WeatherServiceMock:
 
+class WeatherServiceMock:
     def __init__(self, api_key=None):
         self.api_key = api_key
 
@@ -10,7 +10,7 @@ class WeatherServiceMock:
             return {"error": "API klíč není nastaven."}
 
         first_letter = city[0].lower()
-        if first_letter < 'm':
+        if first_letter < "m":
             temperature = 15.0
             description = "sunny"
         else:
@@ -18,16 +18,9 @@ class WeatherServiceMock:
             description = "cloudy"
 
         current_minute = datetime.now().minute
-        temperature += current_minute * 0.1  
+        temperature += current_minute * 0.1
 
         return {
-            "main": {
-                "temp": temperature,
-                "humidity": 50
-            },
-            "weather": [
-                {
-                    "description": description
-                }
-            ]
+            "main": {"temp": temperature, "humidity": 50},
+            "weather": [{"description": description}],
         }

@@ -1,5 +1,6 @@
 import math
 
+
 class Calculator:
     def multiply_many(self, numbers):
         result = 1

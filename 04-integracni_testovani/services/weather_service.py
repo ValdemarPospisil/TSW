@@ -7,6 +7,7 @@ from weather_data_logger import WeatherDataLogger
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
+
 class WeatherService:
     """Služba pro získání počasí pomocí API klíče uloženého v .env."""
 
@@ -22,4 +23,3 @@ class WeatherService:
             return response.json()
         else:
             return {"error": f"Chyba: {response.status_code}, {response.text}"}
-
