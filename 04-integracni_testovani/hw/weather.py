@@ -2,13 +2,13 @@ import requests
 import toml
 import os
 from dotenv import load_dotenv
-
+from pathlib import Path
 # Načtení proměnných z .env souboru
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
 
-def load_config(file_path="config.toml"):
+def load_config(file_path=Path(__file__).parent / "config.toml"):
     config = toml.load(file_path)
     return config["locations"]["cities"]
 
