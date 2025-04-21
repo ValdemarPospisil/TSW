@@ -1,6 +1,6 @@
 import pytest
 from pytest_bdd import scenarios, given, when, then
-from bank import BankAccount  # Pokud jsi přejmenoval app.py na bank.py
+from bank import BankAccount
 
 # Načtení scénářů z .feature souboru
 scenarios('bank_account.feature')
@@ -11,14 +11,13 @@ def account():
 
 # --- GIVEN ---
 @given('nový bankovní účet')
-def new_account():
-    pass  # už je zajištěno pomocí fixture
+def new_account(account):
+    return account  # vrací fixture account
 
 @given('bankovní účet se zůstatkem 300 Kč')
-def account_with_300():
-    acc = BankAccount()
-    acc.deposit(300)
-    return acc
+def account_with_300(account):
+    account.deposit(300)
+    return account  # používá stejný objekt account z fixture
 
 # --- WHEN ---
 @when('vložím 200 Kč')

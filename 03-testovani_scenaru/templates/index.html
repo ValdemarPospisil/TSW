@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Knihovna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .book {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seznam knih</h1>
+    
+    <div id="books">
+        {% for book in books %}
+            <div class="book">
+                <h3>{{ book.title }}</h3>
+                <p>Autor: {{ book.author }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <button id="add-book">Přidat knihu</button>
+</body>
+</html>
