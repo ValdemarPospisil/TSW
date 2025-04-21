@@ -1,5 +1,6 @@
 from main import main
 
+
 def test_main_with_stub(capsys):
     main(use_stub=True)
 
