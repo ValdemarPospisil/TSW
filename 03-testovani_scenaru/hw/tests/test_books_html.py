@@ -1,4 +1,3 @@
-import pytest
 from pytest_bdd import scenarios, given, then
 
 scenarios("../features/books_html.feature")

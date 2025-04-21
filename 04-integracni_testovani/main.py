@@ -1,7 +1,6 @@
 from services.weather_service import WeatherService
 from services.weather_sevice_stub import WeatherServiceStub
 from services.weather_service_mock import WeatherServiceMock
-from weather_data_logger import WeatherDataLogger
 from dotenv import load_dotenv
 import os
 

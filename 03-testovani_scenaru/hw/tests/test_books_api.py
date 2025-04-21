@@ -1,5 +1,4 @@
 import requests
-import pytest
 from pytest_bdd import scenarios, when, then
 
 scenarios("../features/books_api.feature")

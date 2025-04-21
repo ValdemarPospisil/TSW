@@ -1,10 +1,8 @@
 import pytest
 import os
 import time
-import signal
 import subprocess
 from splinter import Browser
-import multiprocessing
 
 # Globální proměnná pro uložení procesu Flask aplikace
 flask_process = None

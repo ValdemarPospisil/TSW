@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_initial_balance(account):
     expected = 0
     outcome = account.get_balance()

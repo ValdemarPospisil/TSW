@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Načtení proměnných z .env souboru
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+KEY = os.getenv("API_KEY")
 
 
 def load_config(file_path=Path(__file__).parent / "config.toml"):
@@ -14,9 +14,9 @@ def load_config(file_path=Path(__file__).parent / "config.toml"):
     return config["locations"]["cities"]
 
 
-def fetch_weather(city):
+def fetch_weather(c):
     response = requests.get(
-        f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+        f"http://api.openweathermap.org/data/2.5/weather?q={c}&appid={KEY}&units=metric"
     )
     return response.json()
 

@@ -1,9 +1,4 @@
-import pytest
 from main import main
-from services.weather_sevice_stub import WeatherServiceStub
-import unittest
-from services.weather_service_mock import WeatherServiceMock
-
 
 def test_main_with_stub(capsys):
     main(use_stub=True)
