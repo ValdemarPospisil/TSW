@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on linux)" generated="2025-04-22T11:26:24.243089" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Bdd" source="/home/valdemar/Documents/4.Semestr/TSW/10-akceptacni_testovani/test-bdd.robot">
+<test id="s1-t1" name="Adding A Task Should Appear In List" line="11">
+<kw name="Given">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Browser Is Open To Todo Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-22T11:26:24.892141" level="INFO">Opening browser 'firefox' to base url 'http://localhost:5000'.</msg>
+<arg>${URL}</arg>
+<arg>firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-22T11:26:24.890993" elapsed="14.796299"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2025-04-22T11:26:24.889633" elapsed="14.798299"/>
+</kw>
+<arg>${step_keyword}</arg>
+<arg>@{args}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2025-04-22T11:26:24.887818" elapsed="14.800586"/>
+</kw>
+<arg>Browser Is Open To Todo Page</arg>
+<status status="PASS" start="2025-04-22T11:26:24.884230" elapsed="14.804555"/>
+</kw>
+<kw name="When">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="I Add Task With Text">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-22T11:26:39.698582" level="INFO">Typing text 'Udělat kávu' into text field 'name=task'.</msg>
+<arg>name=task</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-22T11:26:39.697161" elapsed="0.470439"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-22T11:26:40.169687" level="INFO">Clicking button 'xpath=//input[@type="submit"]'.</msg>
+<arg>xpath=//input[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-22T11:26:40.168484" elapsed="0.203173"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2025-04-22T11:26:39.694542" elapsed="0.677558"/>
+</kw>
+<arg>${step_keyword}</arg>
+<arg>@{args}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2025-04-22T11:26:39.692518" elapsed="0.679837"/>
+</kw>
+<arg>I Add Task With Text</arg>
+<arg>Udělat kávu</arg>
+<status status="PASS" start="2025-04-22T11:26:39.690723" elapsed="0.681892"/>
+</kw>
+<kw name="Then">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="I Should See Task In List">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-22T11:26:40.420390" level="INFO">Current page contains text 'Udělat kávu'.</msg>
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-22T11:26:40.382564" elapsed="0.038176"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-22T11:26:40.421415" elapsed="1.996941"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2025-04-22T11:26:40.380709" elapsed="2.038189"/>
+</kw>
+<arg>${step_keyword}</arg>
+<arg>@{args}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2025-04-22T11:26:40.379269" elapsed="2.040077"/>
+</kw>
+<arg>I Should See Task In List</arg>
+<arg>Udělat kávu</arg>
+<status status="PASS" start="2025-04-22T11:26:40.375155" elapsed="2.044658"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:26:24.880087" elapsed="17.540740"/>
+</test>
+<status status="PASS" start="2025-04-22T11:26:24.246470" elapsed="18.176962"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test-Bdd" id="s1" pass="1" fail="0" skip="0">Test-Bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
