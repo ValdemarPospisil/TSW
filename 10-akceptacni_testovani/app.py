@@ -4,21 +4,19 @@ app = Flask(__name__)
 
 todos = []
 
+
 @app.route("/", methods=["GET", "POST"])
-
 def index():
-
     if request.method == "POST":
-
         task = request.form.get("task")
 
         if task:
-
             todos.append(task)
 
         return redirect("/")
 
-    return render_template_string("""
+    return render_template_string(
+        """
 
         <h1>TODO Seznam</h1>
 
@@ -40,8 +38,10 @@ def index():
 
         </ul>
 
-    """, todos=todos)
+    """,
+        todos=todos,
+    )
+
 
 if __name__ == "__main__":
-
     app.run(debug=True)
