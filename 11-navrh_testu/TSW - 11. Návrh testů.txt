@@ -1,0 +1,195 @@
+﻿věk
+	typ občanství
+	typ dokladu
+	validita
+	2-17
+	EU
+	pas
+	1
+	0-2
+	EU
+	žádný
+	1
+	0-2
+	non-EU
+	žádný
+	1
+	2-17
+	EU
+	občanka
+	1
+	2-17
+	non-EU
+	pas
+	1
+	2-17
+	non-EU
+	občanka
+	0
+	18-64
+	EU
+	občanka
+	1
+	18-64
+	EU
+	pas
+	1
+	18-64
+	non-EU
+	pas
+	1
+	18-64
+	non-EU
+	občanka
+	0
+	>64
+	EU
+	občanka
+	1
+	>64
+	non-EU
+	pas
+	1
+	>64
+	non-EU
+	občanka
+	0
+	>120
+	..
+	..
+	0
+	<0
+	..
+	..
+	0
+	
+
+
+
+průměr
+	věk
+	datum
+	očekávaný výstup
+	1.0
+	18
+	15. 5.
+	Přijetí
+	0.99
+	18
+	14. 5.
+	Zamítnutí - špatný průměr
+	1.01
+	18
+	15. 5.
+	Přijetí
+	2.50
+	30
+	15.5.
+	Přijetí
+	2.49
+	30
+	15.5.
+	Přijetí
+	2.51
+	30
+	15.5.
+	Zamítnutí - špatný průměr
+	1
+	17
+	15.5.
+	Zamítnutí - moc mladý
+	1
+	19
+	15.5.
+	Přijetí
+	1
+	29
+	15.5.
+	Přijetí
+	1
+	31
+	15.5.
+	Zamítnutí - moc starý
+	1
+	18
+	14.5.
+	Přijetí
+	1
+	18
+	16.5.
+	Zamítnutí - pozdě přihláška
+	
+
+
+
+
+
+STK
+	Věk
+	EU
+	CZ_REG
+	Očekávaný výstup
+	0
+	25
+	1
+	1
+	Zamítnuto - neplatná STK
+	1
+	20
+	1
+	1
+	Zamítnuto - věk < 21
+	1
+	25
+	0
+	0
+	Přijato - bez slevy
+	1
+	25
+	1
+	0
+	Přijato - bez slevy
+	1
+	25
+	0
+	1
+	Přijato - bez slevy
+	1
+	25
+	1
+	1
+	Přijato - se slevou
+	  
+
+
+
+
+
+Počáteční stav
+	Událost
+	Očekávaný stav
+	Výsledek
+	Aktivní
+	Převod peněz
+	Aktivní
+	OK
+	Aktivní
+	Nahlášení podvodu
+	Zablokovaný
+	OK
+	Zablokovaný
+	Obnovení přístupu
+	Aktivní
+	OK
+	Aktivní
+	Nečinnost
+	Dočasně pozastavený
+	OK
+	Dočasně pozastavený
+	Obnovení přístupu
+	Aktivní
+	OK
+	Aktivní
+	Žádost o zrušení
+	Uzavřený
+	OK
