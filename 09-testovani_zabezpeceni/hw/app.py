@@ -30,7 +30,7 @@ def login():
         password = request.form["password"]
         conn = sqlite3.connect("data.db")
         c = conn.cursor()
-        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'" 
+        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
         print(f"DEBUG: {query}")
         c.execute(query)
         result = c.fetchall()
