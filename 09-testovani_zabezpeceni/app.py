@@ -24,7 +24,6 @@ def init_db():
     c.execute('INSERT INTO users (username, password) VALUES ("user", "user123")')
 
     conn.commit()
-
     conn.close()
 
 
@@ -44,7 +43,7 @@ def login():
 
         c = conn.cursor()
 
-        query = f"SELECT * FROM users WHERE username = ? AND password = ?"
+        query = "SELECT * FROM users WHERE username = ? AND password = ?"
 
         print(f"DEBUG: {query}")
 
