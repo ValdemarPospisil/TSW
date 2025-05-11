@@ -1,20 +1,23 @@
-from flask import Flask, request, render_template_string, redirect
-
+from flask import Flask, request, render_template_string
 import sqlite3
+
 
 app = Flask(__name__)
 
-# Inicializace databáze
 
 def init_db():
-
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect("users.db")
 
     c = conn.cursor()
 
-    c.execute('DROP TABLE IF EXISTS users')
+    c.execute("DROP TABLE IF EXISTS users")
 
-    c.execute('CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)')
+    c.execute(
+        """
+        CREATE TABLE users 
+        (id INTEGER PRIMARY KEY, username TEXT, password TEXT)
+        """
+    )
 
     c.execute('INSERT INTO users (username, password) VALUES ("admin", "admin123")')
 
@@ -22,23 +25,23 @@ def init_db():
 
     conn.commit()
 
+
     conn.close()
+
 
 init_db()
 
-@app.route('/', methods=['GET', 'POST'])
 
+@app.route("/", methods=["GET", "POST"])
 def login():
-
     error = None
 
-    if request.method == 'POST':
+    if request.method == "POST":
+        username = request.form["username"]
 
-        username = request.form['username']
+        password = request.form["password"]
 
-        password = request.form['password']
-
-        conn = sqlite3.connect('users.db')
+        conn = sqlite3.connect("users.db")
 
         c = conn.cursor()
 
@@ -54,14 +57,13 @@ def login():
         conn.close()
 
         if result:
-
             return f"Welcome, {username}!"
 
         else:
-
             error = "Invalid credentials"
 
-    return render_template_string('''
+    return render_template_string(
+        """
 
         <h2>Login</h2>
 
@@ -77,8 +79,10 @@ def login():
 
         </form>
 
-    ''', error=error)
+    """,
+        error=error,
+    )
 
-if __name__ == '__main__':
 
+if __name__ == "__main__":
     app.run(debug=True)
