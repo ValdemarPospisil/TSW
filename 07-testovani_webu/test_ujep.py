@@ -28,7 +28,7 @@ try:
         user_panel = driver.find_element(By.XPATH, "//a[contains(text(), 'My study')]")
         print("✅ Test přihlášení prošel – uživatel je přihlášen.")
     except Exception as e:
-        print("❌ Test selhal – uživatel není přihlášen.")
+        print("❌ Test selhal – uživatel není přihlášen.", str(e))
 
 
 except Exception as e:

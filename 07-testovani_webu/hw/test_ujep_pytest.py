@@ -124,5 +124,5 @@ def test_parametrized_login(driver, username, password, should_pass):
         try:
             driver.find_element(By.XPATH, "//a[contains(text(), 'My study')]")
             assert False, "Invalid user should not be logged in"
-        except Exception as e:
+        except Exception:
             assert True

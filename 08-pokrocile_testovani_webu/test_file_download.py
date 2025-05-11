@@ -18,9 +18,7 @@ def test_file_download():
 
     driver = webdriver.Firefox(options=options)
     try:
-        driver.get(
-            "https://file-examples.com/index.php/sample-documents-download/sample-pdf-download/"
-        )
+        driver.get("https://file-examples.com/index.php/sample-documents-download/")
 
         try:
             consent_button = WebDriverWait(driver, 5).until(
@@ -29,7 +27,7 @@ def test_file_download():
             consent_button.click()
             print("Cookie banner zavřen.")
         except Exception as e:
-            print("Cookie banner se nezobrazil.")
+            print(f"Cookie banner se nezobrazil. {e}")
 
         download_link = driver.find_element(By.CLASS_NAME, "download-button")
         download_link.click()
