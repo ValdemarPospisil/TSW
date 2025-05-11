@@ -14,7 +14,7 @@ def init_db():
 
     c.execute(
         """
-        CREATE TABLE users 
+        CREATE TABLE users
         (id INTEGER PRIMARY KEY, username TEXT, password TEXT)
         """
     )
