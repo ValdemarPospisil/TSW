@@ -1,4 +1,3 @@
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -19,21 +18,20 @@ try:
     # Výběr fakulty
     fakulta_select = Select(driver.find_element(By.ID, "browserFakulta"))
     fakulta_select.select_by_value("FSE")
-    
-    
+
     # Výběr formy studia
     forma_select = Select(driver.find_element(By.ID, "searchForma"))
     forma_select.select_by_value("P")
 
     # Kliknutí na tlačítko hledání
     driver.find_element(By.ID, "searchProgramySubmit").click()
-    
+
     # Počkej na načtení výsledků
     time.sleep(3)
-    
+
     prohlizeni_link_predmetu = driver.find_element(By.ID, "nalezenyProgramId_3")
     prohlizeni_link_predmetu.click()
-    
+
     time.sleep(5)
 
     print("Test filtrů prošel úspěšně.")

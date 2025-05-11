@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 options = webdriver.FirefoxOptions()
-options.headless = False  
+options.headless = False
 
 driver = webdriver.Firefox(options=options)
 
@@ -14,7 +14,7 @@ try:
     username_input = driver.find_element(By.NAME, "loginName")
     password_input = driver.find_element(By.NAME, "password")
 
-    username_input.send_keys("st98265")  
+    username_input.send_keys("st98265")
     password_input.send_keys("x0207112510")
 
     password_input.send_keys(Keys.RETURN)
@@ -23,13 +23,13 @@ try:
     # login_button.click()
 
     time.sleep(5)
-    
+
     try:
-        user_panel = driver.find_element(By.XPATH, "//a[contains(text(), 'My study')]")  
+        user_panel = driver.find_element(By.XPATH, "//a[contains(text(), 'My study')]")
         print("✅ Test přihlášení prošel – uživatel je přihlášen.")
     except:
         print("❌ Test selhal – uživatel není přihlášen.")
-    
+
 
 except Exception as e:
     print("❌ Test selhal:", str(e))
