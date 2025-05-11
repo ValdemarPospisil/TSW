@@ -11,19 +11,19 @@ def step_impl(context):
 
 
 @when("I switch to the iframe")
-def step_impl(context):
+def step_open_drag_drop_page(context):
     context.driver.switch_to.frame(0)
 
 
 @when("I drag the source element to the target")
-def step_impl(context):
+def step_impl1(context):
     source = context.driver.find_element(By.ID, "draggable")
     target = context.driver.find_element(By.ID, "droppable")
     ActionChains(context.driver).drag_and_drop(source, target).perform()
 
 
 @then('the target should show "Dropped!"')
-def step_impl(context):
+def step_impl2(context):
     target = context.driver.find_element(By.ID, "droppable")
     assert "Dropped!" in target.text
     context.driver.quit()

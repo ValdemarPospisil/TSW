@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common import options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -29,7 +28,7 @@ def test_file_download():
             )
             consent_button.click()
             print("Cookie banner zavřen.")
-        except:
+        except Exception as e:
             print("Cookie banner se nezobrazil.")
 
         download_link = driver.find_element(By.CLASS_NAME, "download-button")
