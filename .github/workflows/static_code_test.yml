@@ -27,3 +27,6 @@ jobs:
 
       - name: Check Formatting with Black
         run: black --check .
+
+      - name: Run Mypy (Type checking)
+        run: mypy --ignore-missing-imports
